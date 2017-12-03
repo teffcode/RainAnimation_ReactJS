@@ -10,7 +10,7 @@ class App extends Component {
     return (
         hearts.map((element, index) => {
             const style = {
-                // left: index * 50 + "px"
+                // left: index * 70 + "px"
                 left: Math.floor((Math.random() * (window.innerWidth - 1100))) + 70 + "px",
                 animationDelay: Math.floor((Math.random() * (1000))) + "ms"
             }
