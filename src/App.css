@@ -1,0 +1,79 @@
+body {
+  background-color: palevioletred;
+  background: linear-gradient(palevioletred, lightpink); 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  margin-top: 30px;
+}
+
+.like {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-image: url('./heart.png');
+  background-size: 1450px 50px;
+  bottom: 100px;
+  position: fixed;
+}
+
+.like.is-liked {
+  animation-name: like, move;
+  animation-duration: .8s, 4s;
+  animation-timing-function: steps(28), linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite, 1;
+}
+
+.container__cloud {
+  position: relative;
+  z-index: 1;
+}
+
+.eye {
+  background-color: gray;
+  position: absolute;
+  top: 90px;
+  border-radius: 50%;
+  z-index: 3;
+  height: 10px;
+  width: 10px;
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.one {
+  left: 135px;
+}
+
+.two {
+  left: 170px;
+}
+
+@keyframes blink {
+  0% { height: 10px; }
+  5% { transform: translate(0px, 5px); height: 1px; }
+  10% { transform: translate(0px, 0px); height: 10px; }
+}
+
+@keyframes like {
+  0% {
+    background-position: 0 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes move {
+  from {
+    position: absolute;
+  }
+  to {
+    position: absolute;
+    top: 30%;
+  }
+}
